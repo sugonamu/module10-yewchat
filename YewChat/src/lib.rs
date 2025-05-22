@@ -14,10 +14,6 @@ use yew_router::prelude::*;
 use components::chat::Chat;
 use components::login::Login;
 
-// When the `wee_alloc` feature is enabled, this uses `wee_alloc` as the global
-// allocator.
-//
-// If you don't want to use `wee_alloc`, you can safely delete this.
 #[cfg(feature = "wee_alloc")]
 #[global_allocator]
 static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
@@ -52,18 +48,31 @@ fn main() -> Html {
         <ContextProvider<User> context={(*ctx).clone()}>
             <BrowserRouter>
                 <div class="flex w-screen h-screen">
-                    <Switch<Route> render={Switch::render(switch)}/>
+                    <Switch<Route> render={Switch::render(switch)} />
                 </div>
             </BrowserRouter>
         </ContextProvider<User>>
     }
 }
 
-fn switch(selected_route: &Route) -> Html {
-    match selected_route {
-        Route::Login => html! {<Login />},
-        Route::Chat => html! {<Chat/>},
-        Route::NotFound => html! {<h1>{"404 baby"}</h1>},
+fn switch(route: &Route) -> Html {
+    match route {
+        Route::Login => html! {
+            <div class="flex flex-col items-center w-full">
+                <h2 class="text-2xl font-semibold text-center text-violet-700 mt-10">
+                    {"✨ Welcome to YewChat – A Creative Chatroom ✨"}
+                </h2>
+                <Login />
+            </div>
+        },
+        Route::Chat => html! {
+            <Chat />
+        },
+        Route::NotFound => html! {
+            <div class="flex justify-center items-center h-full w-full">
+                <h1 class="text-3xl font-bold text-gray-700">{"404 - Page Not Found 🛰️"}</h1>
+            </div>
+        },
     }
 }
 

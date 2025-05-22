@@ -93,7 +93,7 @@ impl Component for Chat {
                             .map(|u| UserProfile {
                                 name: u.into(),
                                 avatar: format!(
-                                    "https://avatars.dicebear.com/api/adventurer-neutral/{}.svg",
+                                    "https://i.pravatar.cc/150?u={}",
                                     u
                                 )
                                     .into(),
@@ -137,24 +137,26 @@ impl Component for Chat {
 
     fn view(&self, ctx: &Context<Self>) -> Html {
         let submit = ctx.link().callback(|_| Msg::SubmitMessage);
+        let my_name = self.users.get(0).map(|u| u.name.clone()).unwrap_or_default(); // Replace with actual current user
 
         html! {
             <div class="flex w-screen">
                 <div class="flex-none w-56 h-screen bg-gray-100">
                     <div class="text-xl p-3">{"Users"}</div>
                     {
-                        self.users.clone().iter().map(|u| {
+                        self.users.iter().map(|u| {
                             html!{
-                                <div class="flex m-3 bg-white rounded-lg p-2">
-                                    <div>
+                                <div class="flex m-3 bg-white rounded-lg p-2 items-center">
+                                    <div class="relative">
                                         <img class="w-12 h-12 rounded-full" src={u.avatar.clone()} alt="avatar"/>
+                                        <span class="online-dot"></span>
                                     </div>
                                     <div class="flex-grow p-3">
                                         <div class="flex text-xs justify-between">
                                             <div>{u.name.clone()}</div>
                                         </div>
                                         <div class="text-xs text-gray-400">
-                                            {"Hi there!"}
+                                            {"Online"}
                                         </div>
                                     </div>
                                 </div>
@@ -163,33 +165,54 @@ impl Component for Chat {
                     }
                 </div>
                 <div class="grow h-screen flex flex-col">
-                    <div class="w-full h-14 border-b-2 border-gray-300"><div class="text-xl p-3">{"💬 Chat!"}</div></div>
-                    <div class="w-full grow overflow-auto border-b-2 border-gray-300">
+                    <div class="w-full h-14 border-b-2 border-gray-300 flex items-center">
+                        <div class="text-xl p-3">{"💬 Chat!"}</div>
+                    </div>
+                    <div class="w-full grow overflow-auto border-b-2 border-gray-300 flex flex-col p-4 space-y-2">
                         {
                             self.messages.iter().map(|m| {
-                                let user = self.users.iter().find(|u| u.name == m.from).unwrap();
+                                let is_me = m.from == my_name;
+                                let user = self.users.iter().find(|u| u.name == m.from);
+                                let avatar = user.map(|u| u.avatar.clone()).unwrap_or_default();
                                 html!{
-                                    <div class="flex items-end w-3/6 bg-gray-100 m-8 rounded-tl-lg rounded-tr-lg rounded-br-lg ">
-                                        <img class="w-8 h-8 rounded-full m-3" src={user.avatar.clone()} alt="avatar"/>
-                                        <div class="p-3">
-                                            <div class="text-sm">
-                                                {m.from.clone()}
-                                            </div>
-                                            <div class="text-xs text-gray-500">
+                                    <div class={format!("flex items-end {}", if is_me { "justify-end" } else { "justify-start" })}>
+                                        { if !is_me {
+                                            html! { <img class="w-8 h-8 rounded-full mr-2" src={avatar.clone()} alt="avatar"/> }
+                                        } else { html! {} } }
+                                        <div class={format!("chat-bubble {}", if is_me { "me" } else { "other" })}>
+                                            <div class="text-xs text-gray-500 mb-1">{&m.from}</div>
+                                            {
                                                 if m.message.ends_with(".gif") {
-                                                    <img class="mt-3" src={m.message.clone()}/>
+                                                    html! { <img class="mt-1" src={m.message.clone()} /> }
                                                 } else {
-                                                    {m.message.clone()}
+                                                    html! { {m.message.clone()} }
                                                 }
-                                            </div>
+                                            }
                                         </div>
+                                        { if is_me {
+                                            html! { <img class="w-8 h-8 rounded-full ml-2" src={avatar} alt="avatar"/> }
+                                        } else { html! {} } }
                                     </div>
                                 }
                             }).collect::<Html>()
                         }
-
+                        // Typing indicator (show conditionally in real app)
+                        <div class="typing-indicator mt-2">
+                            <span class="typing-dot"></span>
+                            <span class="typing-dot"></span>
+                            <span class="typing-dot"></span>
+                            <span class="ml-2 text-xs text-gray-500">{"Someone is typing..."}</span>
+                        </div>
                     </div>
                     <div class="w-full h-14 flex px-3 items-center">
+                        <button class="mr-2" title="Add emoji" onclick={Callback::from(|_| {
+                            // Show emoji picker via JS interop or Yew logic
+                            if let Some(picker) = web_sys::window()
+                                .and_then(|w| w.document())
+                                .and_then(|d| d.get_element_by_id("emoji-picker")) {
+                                    picker.set_attribute("style", "position: fixed; bottom: 80px; right: 40px; display: block;").ok();
+                            }
+                        })}>{"😊"}</button>
                         <input ref={self.chat_input.clone()} type="text" placeholder="Message" class="block w-full py-2 pl-4 mx-3 bg-gray-100 rounded-full outline-none focus:text-gray-700" name="message" required=true />
                         <button onclick={submit} class="p-3 shadow-sm bg-blue-600 w-10 h-10 rounded-full flex justify-center items-center color-white">
                             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="fill-white">
