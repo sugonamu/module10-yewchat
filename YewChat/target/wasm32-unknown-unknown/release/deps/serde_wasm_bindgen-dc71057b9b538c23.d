@@ -1,0 +1,10 @@
+C:\Users\apoll\OneDrive\Desktop\SEM4\RPL\Tutor3\YewChat\target\wasm32-unknown-unknown\release\deps\libserde_wasm_bindgen-dc71057b9b538c23.rmeta: C:\Users\apoll\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-wasm-bindgen-0.3.1\src\lib.rs C:\Users\apoll\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-wasm-bindgen-0.3.1\src\de.rs C:\Users\apoll\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-wasm-bindgen-0.3.1\src\error.rs C:\Users\apoll\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-wasm-bindgen-0.3.1\src\ser.rs
+
+C:\Users\apoll\OneDrive\Desktop\SEM4\RPL\Tutor3\YewChat\target\wasm32-unknown-unknown\release\deps\libserde_wasm_bindgen-dc71057b9b538c23.rlib: C:\Users\apoll\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-wasm-bindgen-0.3.1\src\lib.rs C:\Users\apoll\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-wasm-bindgen-0.3.1\src\de.rs C:\Users\apoll\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-wasm-bindgen-0.3.1\src\error.rs C:\Users\apoll\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-wasm-bindgen-0.3.1\src\ser.rs
+
+C:\Users\apoll\OneDrive\Desktop\SEM4\RPL\Tutor3\YewChat\target\wasm32-unknown-unknown\release\deps\serde_wasm_bindgen-dc71057b9b538c23.d: C:\Users\apoll\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-wasm-bindgen-0.3.1\src\lib.rs C:\Users\apoll\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-wasm-bindgen-0.3.1\src\de.rs C:\Users\apoll\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-wasm-bindgen-0.3.1\src\error.rs C:\Users\apoll\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-wasm-bindgen-0.3.1\src\ser.rs
+
+C:\Users\apoll\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-wasm-bindgen-0.3.1\src\lib.rs:
+C:\Users\apoll\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-wasm-bindgen-0.3.1\src\de.rs:
+C:\Users\apoll\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-wasm-bindgen-0.3.1\src\error.rs:
+C:\Users\apoll\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-wasm-bindgen-0.3.1\src\ser.rs:

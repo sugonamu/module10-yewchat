@@ -1,0 +1,10 @@
+C:\Users\apoll\OneDrive\Desktop\SEM4\RPL\Tutor3\YewChat\target\wasm32-unknown-unknown\release\deps\libgloo_storage-b6137eb72f9c9949.rmeta: C:\Users\apoll\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gloo-storage-0.2.0\src\lib.rs C:\Users\apoll\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gloo-storage-0.2.0\src\errors.rs C:\Users\apoll\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gloo-storage-0.2.0\src\local_storage.rs C:\Users\apoll\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gloo-storage-0.2.0\src\session_storage.rs
+
+C:\Users\apoll\OneDrive\Desktop\SEM4\RPL\Tutor3\YewChat\target\wasm32-unknown-unknown\release\deps\libgloo_storage-b6137eb72f9c9949.rlib: C:\Users\apoll\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gloo-storage-0.2.0\src\lib.rs C:\Users\apoll\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gloo-storage-0.2.0\src\errors.rs C:\Users\apoll\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gloo-storage-0.2.0\src\local_storage.rs C:\Users\apoll\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gloo-storage-0.2.0\src\session_storage.rs
+
+C:\Users\apoll\OneDrive\Desktop\SEM4\RPL\Tutor3\YewChat\target\wasm32-unknown-unknown\release\deps\gloo_storage-b6137eb72f9c9949.d: C:\Users\apoll\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gloo-storage-0.2.0\src\lib.rs C:\Users\apoll\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gloo-storage-0.2.0\src\errors.rs C:\Users\apoll\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gloo-storage-0.2.0\src\local_storage.rs C:\Users\apoll\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gloo-storage-0.2.0\src\session_storage.rs
+
+C:\Users\apoll\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gloo-storage-0.2.0\src\lib.rs:
+C:\Users\apoll\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gloo-storage-0.2.0\src\errors.rs:
+C:\Users\apoll\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gloo-storage-0.2.0\src\local_storage.rs:
+C:\Users\apoll\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gloo-storage-0.2.0\src\session_storage.rs:

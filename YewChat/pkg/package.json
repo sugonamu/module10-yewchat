@@ -1,0 +1,17 @@
+{
+  "name": "yewchat",
+  "type": "module",
+  "version": "0.1.0",
+  "files": [
+    "yewchat_bg.wasm",
+    "yewchat.js",
+    "yewchat_bg.js",
+    "yewchat.d.ts"
+  ],
+  "main": "yewchat.js",
+  "types": "yewchat.d.ts",
+  "sideEffects": [
+    "./yewchat.js",
+    "./snippets/*"
+  ]
+}
