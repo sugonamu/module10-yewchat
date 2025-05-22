@@ -46,7 +46,9 @@ This repository is divided to branches that correspond to the blog post sections
 
 ![LoginPage](/3.2.1.png)
 
-![UsernameChange](/3.2.2.mp4)
+<video src="/3.2.2.mp4" controls width="400">
+  Your browser does not support the video tag.
+</video>
 
 ![new ui](/3.2.3.png)
 
